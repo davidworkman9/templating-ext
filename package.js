@@ -2,8 +2,7 @@ Package.describe({
     name: 'workman:templating-ext',
     version: '0.0.1',
     summary: 'Extensions to templates to make it easier to get child and parent templates',
-    // URL to the Git repository containing the source code for this package.
-    git: '',
+    git: 'https://github.com/davidworkman9/templating-ext.git',
     documentation: 'README.md'
 });
 
