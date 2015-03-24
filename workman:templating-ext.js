@@ -67,13 +67,13 @@ _.extend(Blaze.View.prototype, {
 
 
 $.fn.templateInstance = function () {
-	if (!this[0])
-		return null;
-	var view = Blaze.getView(this[0]);
-	if (!view)
-		return null;
-	var parentView = view.findFirstParentView();
-	if (!parentView)
-		return null;
-	return parentView.templateInstance();
+    if (!this[0])
+      return null;
+    var view = Blaze.getView(this[0]);
+    while (view && !view.templateInstance) {
+        view = view.parentView;
+    }
+    if (!view)
+        return null;
+    return view.templateInstance();
 };
